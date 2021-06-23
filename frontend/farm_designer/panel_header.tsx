@@ -35,6 +35,8 @@ export enum Panel {
   Help = "Help",
   Settings = "Settings",
   Shop = "Shop",
+  
+  DataBase = "DataBase",
 }
 
 type Tabs = keyof typeof Panel;
@@ -74,6 +76,8 @@ export const TAB_COLOR: Record<Panel, PanelColor> = {
   [Panel.Help]: PanelColor.gray,
   [Panel.Settings]: PanelColor.gray,
   [Panel.Shop]: PanelColor.gray,
+  
+  [Panel.DataBase]: PanelColor.red,
 };
 
 export enum Icon {
@@ -102,6 +106,8 @@ export enum Icon {
   developer = "developer",
   logout = "logout",
   settings_small = "settings_small",
+
+  database = "database",
 }
 
 export const iconFile = (icon: Icon) => `/app-resources/img/icons/${icon}.svg`;
@@ -127,6 +133,8 @@ export const TAB_ICON: Record<Panel, string> = {
   [Panel.Help]: iconFile(Icon.help),
   [Panel.Settings]: iconFile(Icon.settings),
   [Panel.Shop]: iconFile(Icon.shop),
+
+  [Panel.DataBase]: iconFile(Icon.settings),
 };
 
 export const PANEL_SLUG: Record<Panel, string> = {
@@ -150,6 +158,8 @@ export const PANEL_SLUG: Record<Panel, string> = {
   [Panel.Help]: "help",
   [Panel.Settings]: "settings",
   [Panel.Shop]: "shop",
+
+  [Panel.DataBase]: "database",
 };
 
 const ALT_PANEL_SLUG: Record<string, string[]> = {
@@ -188,6 +198,7 @@ export const PANEL_TITLE = (): Record<Panel, string> => ({
   [Panel.Help]: t("Help"),
   [Panel.Settings]: t("Settings"),
   [Panel.Shop]: t("Shop"),
+  [Panel.DataBase]: t("DataBase"),
 });
 
 export const getCurrentPanel = (): Tabs | undefined => {
@@ -301,6 +312,7 @@ export class DesignerNavTabs
         <NavTab panel={Panel.Messages} />
         <NavTab panel={Panel.Help} />
         <NavTab panel={Panel.Settings} />
+        <NavTab panel={Panel.DataBase} />
       </div>
     </div>;
   }

@@ -25,6 +25,7 @@ export const getLinks = (): Panel[] => [
   Panel.Messages,
   Panel.Help,
   Panel.Settings,
+  Panel.DataBase,
 ];
 
 export const NavLinks = (props: NavLinksProps) =>
