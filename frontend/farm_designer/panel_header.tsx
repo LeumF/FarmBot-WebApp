@@ -302,6 +302,7 @@ export class DesignerNavTabs
         <NavTab panel={Panel.Sequences} />
         <NavTab panel={Panel.Regimens} />
         <NavTab panel={Panel.DataBase} />
+        <NavTab panel={Panel.Settings} />
         <NavTab panel={Panel.FarmEvents} />
         {DevSettings.futureFeaturesEnabled() && <NavTab panel={Panel.Zones} />}
         <NavTab panel={Panel.Points} />
