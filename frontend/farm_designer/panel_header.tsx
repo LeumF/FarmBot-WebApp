@@ -77,7 +77,7 @@ export const TAB_COLOR: Record<Panel, PanelColor> = {
   [Panel.Settings]: PanelColor.gray,
   [Panel.Shop]: PanelColor.gray,
   
-  [Panel.DataBase]: PanelColor.red,
+  [Panel.DataBase]: PanelColor.gray,
 };
 
 export enum Icon {
@@ -107,7 +107,7 @@ export enum Icon {
   logout = "logout",
   settings_small = "settings_small",
 
-  database = "database",
+  database = "database", 
 }
 
 export const iconFile = (icon: Icon) => `/app-resources/img/icons/${icon}.svg`;
@@ -134,7 +134,7 @@ export const TAB_ICON: Record<Panel, string> = {
   [Panel.Settings]: iconFile(Icon.settings),
   [Panel.Shop]: iconFile(Icon.shop),
 
-  [Panel.DataBase]: iconFile(Icon.settings),
+  [Panel.DataBase]: iconFile(Icon.database), 
 };
 
 export const PANEL_SLUG: Record<Panel, string> = {
@@ -198,6 +198,7 @@ export const PANEL_TITLE = (): Record<Panel, string> => ({
   [Panel.Help]: t("Help"),
   [Panel.Settings]: t("Settings"),
   [Panel.Shop]: t("Shop"),
+
   [Panel.DataBase]: t("DataBase"),
 });
 
@@ -300,6 +301,7 @@ export class DesignerNavTabs
         <NavTab panel={Panel.SavedGardens} />
         <NavTab panel={Panel.Sequences} />
         <NavTab panel={Panel.Regimens} />
+        <NavTab panel={Panel.DataBase} />
         <NavTab panel={Panel.FarmEvents} />
         {DevSettings.futureFeaturesEnabled() && <NavTab panel={Panel.Zones} />}
         <NavTab panel={Panel.Points} />
@@ -312,7 +314,6 @@ export class DesignerNavTabs
         <NavTab panel={Panel.Messages} />
         <NavTab panel={Panel.Help} />
         <NavTab panel={Panel.Settings} />
-        <NavTab panel={Panel.DataBase} />
       </div>
     </div>;
   }
