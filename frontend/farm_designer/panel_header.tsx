@@ -301,8 +301,6 @@ export class DesignerNavTabs
         <NavTab panel={Panel.SavedGardens} />
         <NavTab panel={Panel.Sequences} />
         <NavTab panel={Panel.Regimens} />
-        <NavTab panel={Panel.DataBase} />
-        <NavTab panel={Panel.Settings} />
         <NavTab panel={Panel.FarmEvents} />
         {DevSettings.futureFeaturesEnabled() && <NavTab panel={Panel.Zones} />}
         <NavTab panel={Panel.Points} />
@@ -315,6 +313,8 @@ export class DesignerNavTabs
         <NavTab panel={Panel.Messages} />
         <NavTab panel={Panel.Help} />
         <NavTab panel={Panel.Settings} />
+
+        <NavTab panel={Panel.DataBase} />
       </div>
     </div>;
   }
