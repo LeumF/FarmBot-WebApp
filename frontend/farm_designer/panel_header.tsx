@@ -15,6 +15,7 @@ import { compact } from "lodash";
 import { selectAllFarmwareInstallations } from "../resources/selectors";
 
 export enum Panel {
+  Shop = "Shop",
   Map = "Map",
   Plants = "Plants",
   Groups = "Groups",
@@ -34,7 +35,6 @@ export enum Panel {
   Logs = "Logs",
   Help = "Help",
   Settings = "Settings",
-  Shop = "Shop",
   
   DataBase = "DataBase",
 }
@@ -56,6 +56,7 @@ export enum PanelColor {
 }
 
 export const TAB_COLOR: Record<Panel, PanelColor> = {
+  [Panel.Shop]: PanelColor.gray,
   [Panel.Map]: PanelColor.gray,
   [Panel.Plants]: PanelColor.green,
   [Panel.Groups]: PanelColor.blue,
@@ -75,12 +76,12 @@ export const TAB_COLOR: Record<Panel, PanelColor> = {
   [Panel.Logs]: PanelColor.gray,
   [Panel.Help]: PanelColor.gray,
   [Panel.Settings]: PanelColor.gray,
-  [Panel.Shop]: PanelColor.gray,
   
   [Panel.DataBase]: PanelColor.gray,
 };
 
 export enum Icon {
+  shop = "shop",
   map = "map",
   plant = "plant",
   groups = "groups",
@@ -102,7 +103,6 @@ export enum Icon {
   documentation = "documentation",
   support = "support",
   settings = "settings",
-  shop = "shop",
   developer = "developer",
   logout = "logout",
   settings_small = "settings_small",
@@ -113,6 +113,7 @@ export enum Icon {
 export const iconFile = (icon: Icon) => `/app-resources/img/icons/${icon}.svg`;
 
 export const TAB_ICON: Record<Panel, string> = {
+  [Panel.Shop]: iconFile(Icon.shop),
   [Panel.Map]: iconFile(Icon.map),
   [Panel.Plants]: iconFile(Icon.plant),
   [Panel.Groups]: iconFile(Icon.groups),
@@ -132,12 +133,12 @@ export const TAB_ICON: Record<Panel, string> = {
   [Panel.Logs]: iconFile(Icon.logs),
   [Panel.Help]: iconFile(Icon.help),
   [Panel.Settings]: iconFile(Icon.settings),
-  [Panel.Shop]: iconFile(Icon.shop),
 
   [Panel.DataBase]: iconFile(Icon.database), 
 };
 
 export const PANEL_SLUG: Record<Panel, string> = {
+  [Panel.Shop]: "shop",
   [Panel.Map]: "",
   [Panel.Plants]: "plants",
   [Panel.Groups]: "groups",
@@ -157,7 +158,7 @@ export const PANEL_SLUG: Record<Panel, string> = {
   [Panel.Logs]: "logs",
   [Panel.Help]: "help",
   [Panel.Settings]: "settings",
-  [Panel.Shop]: "shop",
+  
 
   [Panel.DataBase]: "database",
 };
@@ -178,6 +179,7 @@ const PANEL_PATH: Partial<Record<Panel, () => string>> = {
 };
 
 export const PANEL_TITLE = (): Record<Panel, string> => ({
+  [Panel.Shop]: t("Shop"),
   [Panel.Map]: t("Map"),
   [Panel.Plants]: t("Plants"),
   [Panel.Groups]: t("Groups"),
@@ -197,7 +199,6 @@ export const PANEL_TITLE = (): Record<Panel, string> => ({
   [Panel.Logs]: t("Logs"),
   [Panel.Help]: t("Help"),
   [Panel.Settings]: t("Settings"),
-  [Panel.Shop]: t("Shop"),
 
   [Panel.DataBase]: t("DataBase"),
 });
