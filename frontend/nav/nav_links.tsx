@@ -8,6 +8,8 @@ import {
 import { ExternalUrl } from "../external_urls";
 import { maybeBeacon } from "../help/tours";
 
+
+//Adds the link to the Panel. 
 export const getLinks = (): Panel[] => [
   Panel.Plants,
   Panel.Groups,
