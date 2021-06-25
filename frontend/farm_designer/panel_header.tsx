@@ -14,6 +14,7 @@ import { computeEditorUrlFromState } from "../nav/compute_editor_url_from_state"
 import { compact } from "lodash";
 import { selectAllFarmwareInstallations } from "../resources/selectors";
 
+// Creates the enum for the top bar
 export enum Panel {
   Map = "Map",
   Plants = "Plants",
@@ -55,6 +56,7 @@ export enum PanelColor {
   red = "red",
 }
 
+// Assign colors to the panel
 export const TAB_COLOR: Record<Panel, PanelColor> = {
   [Panel.Map]: PanelColor.gray,
   [Panel.Plants]: PanelColor.green,
@@ -110,8 +112,10 @@ export enum Icon {
   database = "database", 
 }
 
+// Determines where the icons folder is located. 
 export const iconFile = (icon: Icon) => `/app-resources/img/icons/${icon}.svg`;
 
+// Assigns an icon to the panel
 export const TAB_ICON: Record<Panel, string> = {
   [Panel.Map]: iconFile(Icon.map),
   [Panel.Plants]: iconFile(Icon.plant),
@@ -177,6 +181,7 @@ const PANEL_PATH: Partial<Record<Panel, () => string>> = {
   [Panel.Regimens]: computeEditorUrlFromState("Regimen"),
 };
 
+// Assigns a hover title to the top tab icons. 
 export const PANEL_TITLE = (): Record<Panel, string> => ({
   [Panel.Map]: t("Map"),
   [Panel.Plants]: t("Plants"),
@@ -280,6 +285,7 @@ interface DesignerNavTabsState {
   atEnd?: boolean;
 }
 
+//Determines the order of the top icons
 export class DesignerNavTabs
   extends React.Component<DesignerNavTabsProps, DesignerNavTabsState> {
   state: DesignerNavTabsState = {};
