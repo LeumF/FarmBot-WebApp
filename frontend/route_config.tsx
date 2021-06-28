@@ -585,4 +585,13 @@ export const UNBOUND_ROUTES = [
     getChild: () => import("./zones/edit_zone"),
     childKey: "EditZone"
   }),
+
+  route({
+    children: true,
+    $: "/designer/database",
+    getModule,
+    key,
+    getChild: () => import("./points/point_inventory"),
+    childKey: "Points"
+  }),
 ].concat([NOT_FOUND_ROUTE]);
