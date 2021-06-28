@@ -586,6 +586,7 @@ export const UNBOUND_ROUTES = [
     childKey: "EditZone"
   }),
 
+  -//Adds a route for the database page. 
   route({
     children: true,
     $: "/designer/database",
