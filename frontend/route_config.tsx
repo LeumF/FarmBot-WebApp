@@ -586,13 +586,4 @@ export const UNBOUND_ROUTES = [
     childKey: "EditZone"
   }),
 
-  -//Adds a route for the database page. 
-  route({
-    children: true,
-    $: "/designer/database",
-    getModule,
-    key,
-    getChild: () => import("./points/point_inventory"),
-    childKey: "Points"
-  }),
 ].concat([NOT_FOUND_ROUTE]);
